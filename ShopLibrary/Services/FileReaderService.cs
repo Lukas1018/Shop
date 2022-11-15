@@ -4,11 +4,11 @@ namespace ShopClassLibrary.Services
 {
     public class FileReaderService
     {
-        string candiesFilePath = "C:\\Users\\lukas\\Desktop\\Back-end\\repos\\Shop\\Shop\\Data\\Candies.csv";
-        string drinksFilePath = "C:\\Users\\lukas\\Desktop\\Back-end\\repos\\Shop\\Shop\\Data\\Drinks.csv";
-        string meatsFilePath = "C:\\Users\\lukas\\Desktop\\Back-end\\repos\\Shop\\Shop\\Data\\Meat.csv";
-        string vegetablesFilePath = "C:\\Users\\lukas\\Desktop\\Back-end\\repos\\Shop\\Shop\\Data\\Vegetables.csv";
-
+        string candiesFilePath = AppDomain.CurrentDomain.BaseDirectory + "\\Data\\Candies.csv";
+        string drinksFilePath = AppDomain.CurrentDomain.BaseDirectory + "\\Data\\Drinks.csv";
+        string meatsFilePath = AppDomain.CurrentDomain.BaseDirectory + "\\Data\\Meat.csv";
+        string vegetablesFilePath = AppDomain.CurrentDomain.BaseDirectory + "\\Data\\Vegetables.csv";
+        
         private List<string[]> ConvertCsvToList(string filePath)
         {
             var productList = new List<string[]>();
