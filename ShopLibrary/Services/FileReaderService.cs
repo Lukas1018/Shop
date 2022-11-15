@@ -31,13 +31,21 @@ namespace ShopClassLibrary.Services
             var tempList = ConvertCsvToList(candiesFilePath);
             foreach (var product in tempList)
             {
-                var candy = new Candy();
-                candy.Name = product[0];
-                candy.SugarAmount = Convert.ToInt32(product[1]);
-                candy.Price = Convert.ToDecimal(product[2]);
-                candy.Barcode = Convert.ToInt32(product[3]);
-                candy.Weight = Convert.ToDouble(product[4]);
-                candies.Add(candy);
+                try
+                {
+                    var candy = new Candy();
+                    candy.Name = product[0];
+                    candy.SugarAmount = Convert.ToInt32(product[1]);
+                    candy.Price = Convert.ToDecimal(product[2]);
+                    candy.Barcode = Convert.ToInt32(product[3]);
+                    candy.Weight = Convert.ToDouble(product[4]);
+                    candies.Add(candy);
+                }
+                catch(Exception e)
+                {
+                    Console.WriteLine(e.Message);
+                    Console.WriteLine(product[0]);
+                }
             }
             return candies;
         }
@@ -47,13 +55,21 @@ namespace ShopClassLibrary.Services
             var tempList = ConvertCsvToList(drinksFilePath);
             foreach (var product in tempList)
             {
-                var drink = new Drink();
-                drink.Name = product[0];
-                drink.QuantityInLiters = Convert.ToDouble(product[1]);
-                drink.Price = Convert.ToDecimal(product[2]);
-                drink.Barcode = Convert.ToInt32(product[3]);
-                drink.Weight = Convert.ToDouble(product[4]);
-                drinks.Add(drink);
+                try
+                {
+                    var drink = new Drink();
+                    drink.Name = product[0];
+                    drink.QuantityInLiters = Convert.ToDouble(product[1]);
+                    drink.Price = Convert.ToDecimal(product[2]);
+                    drink.Barcode = Convert.ToInt32(product[3]);
+                    drink.Weight = Convert.ToDouble(product[4]);
+                    drinks.Add(drink);
+                }
+                catch(Exception e)
+                {
+                    Console.WriteLine(e.Message);
+                    Console.WriteLine(product[0]);
+                }
             }
             return drinks;
         }
@@ -64,13 +80,21 @@ namespace ShopClassLibrary.Services
             var tempList = ConvertCsvToList(meatsFilePath);
             foreach (var product in tempList)
             {
-                var meat = new Meat();
-                meat.Name = product[0];
-                meat.ProteinAmount = Convert.ToInt32(product[1]);
-                meat.Price = Convert.ToDecimal(product[2]);
-                meat.Barcode = Convert.ToInt32(product[3]);
-                meat.Weight = Convert.ToDouble(product[4]);
-                meats.Add(meat);
+                try
+                {
+                    var meat = new Meat();
+                    meat.Name = product[0];
+                    meat.ProteinAmount = Convert.ToInt32(product[1]);
+                    meat.Price = Convert.ToDecimal(product[2]);
+                    meat.Barcode = Convert.ToInt32(product[3]);
+                    meat.Weight = Convert.ToDouble(product[4]);
+                    meats.Add(meat);
+                }
+                catch(Exception e)
+                {
+                    Console.WriteLine(e.Message);
+                    Console.WriteLine(product[0]);
+                }
             }
             return meats;
         }
@@ -81,13 +105,21 @@ namespace ShopClassLibrary.Services
             var tempList = ConvertCsvToList(vegetablesFilePath);
             foreach (var product in tempList)
             {
-                var vegetable = new Vegetable();
-                vegetable.Name = product[0];
-                vegetable.FibreAmount = Convert.ToInt32(product[1]);
-                vegetable.Price = Convert.ToDecimal(product[2]);
-                vegetable.Barcode = Convert.ToInt32(product[3]);
-                vegetable.Weight = Convert.ToDouble(product[4]);
-                vegetables.Add(vegetable);
+                try
+                {
+                    var vegetable = new Vegetable();
+                    vegetable.Name = product[0];
+                    vegetable.FibreAmount = Convert.ToInt32(product[1]);
+                    vegetable.Price = Convert.ToDecimal(product[2]);
+                    vegetable.Barcode = Convert.ToInt32(product[3]);
+                    vegetable.Weight = Convert.ToDouble(product[4]);
+                    vegetables.Add(vegetable);
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine(e.Message);
+                    Console.WriteLine(product[0]);
+                }
             }
             return vegetables;
         }
